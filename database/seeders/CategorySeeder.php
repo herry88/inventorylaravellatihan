@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -24,7 +25,14 @@ class CategorySeeder extends Seeder
             ],
             [
                 'nmcategories' => 'Laptop',
+            ],
+            [
+                'nmcategories' => 'Printer',
             ]
         ];
+        //insert data dummy category ke database
+        foreach ($category as $categori) {
+            Category::create($categori);
+        }
     }
 }
